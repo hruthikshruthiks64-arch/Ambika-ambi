@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ambika Kitchen’s - Fresh food, happy moments. Order multi-cuisine favourites in Hoskote.">
+  <title>Ambika Kitchen’s | Fresh food, happy moments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">AK</span><span>AMBIKA KITCHEN’S<small>FRESH FOOD. HAPPY MOMENTS.</small></span></a>
+  <nav><a href="#menu">Menu</a><a href="#how">How it works</a><a href="#about">About</a></nav>
+  <button class="cart-button" id="cartOpen">Your order <span id="cartCount">0</span></button>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span></span> FRESHLY MADE WITH LOVE</div>
+      <h1>Good food.<br><em>Great mood.</em></h1>
+      <p>From comforting biryani to your favourite quick bites, discover something delicious at Ambika Kitchen’s.</p>
+      <div class="hero-actions"><a class="primary-btn" href="#menu">Explore the menu <span>↗</span></a><button class="text-btn" id="heroChat">Order with AI <span>✦</span></button></div>
+      <div class="hero-note"><span>✦</span> Your neighbourhood multi-cuisine kitchen</div>
+    </div>
+    <div class="hero-art">
+      <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?auto=format&fit=crop&w=1100&q=85" alt="Indian meal spread">
+      <div class="floating-card"><b>Made with care</b><span>Prepared fresh for every order</span></div>
+      <div class="hero-stamp">AK<br><small>KITCHEN’S</small></div>
+    </div>
+  </section>
+  <section class="category-strip" id="menu">
+    <div><span class="section-kicker">WHAT ARE YOU CRAVING?</span><h2>Explore our menu</h2></div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="All">All</button><button class="filter" data-category="Biryani">Biryani</button><button class="filter" data-category="South Indian">South Indian</button><button class="filter" data-category="Fast Food">Fast food</button><button class="filter" data-category="North Indian">North Indian</button>
+    </div>
+  </section>
+  <section class="menu-grid" id="menuGrid"></section>
+  <section class="ai-banner" id="how">
+    <div class="ai-orb">✦</div><div><span class="section-kicker">MEET YOUR FOOD ASSISTANT</span><h2>Not sure what to order?</h2><p>Tell our AI assistant what you're craving. It can help you discover dishes and build your order.</p></div>
+    <button class="primary-btn" id="bannerChat">Chat with Ambika AI <span>↗</span></button>
+  </section>
+  <section class="how-section" id="about"><div><span class="section-kicker">SIMPLE. QUICK. DELICIOUS.</span><h2>Your food journey,<br>made easy.</h2></div><div class="steps"><article><b>01</b><h3>Choose your favourites</h3><p>Explore dishes across our multi-cuisine menu.</p></article><article><b>02</b><h3>Place your order</h3><p>Add items to your cart or let the AI assistant help.</p></article><article><b>03</b><h3>Enjoy every bite</h3><p>Confirm your details and receive an order summary.</p></article></div></section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">AK</span><span>AMBIKA KITCHEN’S<small>FRESH FOOD. HAPPY MOMENTS.</small></span></a><p>College project demonstration · Sample menu and prices</p><span>© <span id="year"></span> Ambika Kitchen’s</span></footer>
+
+<div class="overlay" id="cartOverlay"></div>
+<aside class="drawer" id="cartDrawer"><div class="drawer-head"><div><span class="section-kicker">YOUR SELECTION</span><h2>Your order</h2></div><button class="icon-btn" id="cartClose">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-bottom"><div class="total-line"><span>Subtotal</span><b id="subtotal">₹0</b></div><p class="fine-print">Delivery fee, if applicable, is confirmed at checkout.</p><button class="primary-btn full" id="checkoutBtn">Continue to checkout</button></div></aside>
+
+<div class="modal-wrap" id="checkoutModal"><div class="modal"><button class="icon-btn modal-close" id="checkoutClose">×</button><span class="section-kicker">ALMOST THERE</span><h2>Delivery details</h2><form id="checkoutForm"><label>Your name<input name="name" required placeholder="Enter your name"></label><label>Mobile number<input name="phone" required inputmode="tel" pattern="[0-9+ ]{10,15}" placeholder="10-digit mobile number"></label><label>Delivery address<textarea name="address" required placeholder="House number, street, area, city"></textarea></label><label>Payment method<select name="payment"><option>Cash on delivery (demo)</option><option>UPI (demo only)</option></select></label><button class="primary-btn full" type="submit">Place demo order</button></form><p class="fine-print">Demo only: no real payment or delivery request will be made.</p></div></div>
+
+<div class="chat-widget" id="chatWidget"><div class="chat-head"><div class="bot-avatar">✦</div><div><b>Ambika Kitchen’s Assistant</b><small><i></i> Here to help you order</small></div><button class="icon-btn" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="bubble bot">Namaskara! 👋 Welcome to Ambika Kitchen’s. Tell me what you're craving, or ask me to recommend something.</div><div class="quick-prompts"><button>Recommend something</button><button>Show biryani</button><button>How do I order?</button></div></div><form class="chat-input" id="chatForm"><input id="chatText" placeholder="Message Ambika Kitchen’s Assistant…" autocomplete="off"><button aria-label="Send">↑</button></form><div class="chat-disclaimer">AI demo assistant · Verify your order before checkout</div></div>
+<button class="chat-launch" id="chatLaunch"><span>✦</span> Ask Ambika AI</button>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
